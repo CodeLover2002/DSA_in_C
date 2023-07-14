@@ -232,10 +232,10 @@ void selsort()
 {
     struct node *i,*j,*min;
     int temp;
-    for(i=head;i->next!=tail;i=i->next)
+    for(i=head;i!=tail;i=i->next)
     {   
         min=i;
-        for(j=i->next;j!=tail;j=j->next)
+        for(j=i->next;j!=NULL;j=j->next)
         {
             if(j->data<min->data)
             {
@@ -250,12 +250,7 @@ void selsort()
         }
         
     }
-    if(i->data>tail->data)
-    {
-        temp=i->data;
-        i->data=tail->data;
-        tail->data=temp;
-    }
+    
 }
 int main()
 {
