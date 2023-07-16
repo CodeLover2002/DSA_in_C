@@ -130,7 +130,7 @@ void Evaluate(struct stack *pe)
     }
     printf("The result of the infix expression is:\n");
     printf("%d",res[top--]);
-    
+    free(res);
 }
 int main()
 {
@@ -145,5 +145,7 @@ int main()
     InToPo(inf,op,pf);
     print(pf);
     Evaluate(pf);
+    free(pf);
+    free(op);
     
 }
